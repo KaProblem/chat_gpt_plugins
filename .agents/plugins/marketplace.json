@@ -1,0 +1,20 @@
+{
+  "name": "jgpd",
+  "interface": {
+    "displayName": "JGPD Plugins"
+  },
+  "plugins": [
+    {
+      "name": "sharewise",
+      "source": {
+        "source": "local",
+        "path": "./plugins/sharewise"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
+    }
+  ]
+}

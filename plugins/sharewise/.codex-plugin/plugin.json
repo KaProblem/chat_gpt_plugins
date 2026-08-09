@@ -1,0 +1,45 @@
+{
+  "name": "sharewise",
+  "version": "0.1.0",
+  "description": "Wertpapiere finden und das eigene sharewise-Konto direkt aus Codex verwalten.",
+  "author": {
+    "name": "KaProblem e.U.",
+    "url": "https://www.sharewise.com/"
+  },
+  "homepage": "https://www.sharewise.com/de/help/ai_assistant",
+  "repository": "https://github.com/KaProblem/chat_gpt_plugins",
+  "license": "Proprietary",
+  "keywords": [
+    "sharewise",
+    "aktien",
+    "wertpapiere",
+    "watchlists",
+    "musterdepots",
+    "community"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "sharewise",
+    "shortDescription": "Kurse, Watchlists, Einschätzungen und Musterdepots",
+    "longDescription": "Verbinde dein sharewise-Konto mit Codex. Suche Wertpapiere samt Kurs und Community-Stimmung, verwalte Watchlists, veröffentliche Einschätzungen und bediene deine Musterdepots. Änderungen erfolgen erst nach der Anmeldung über sharewise OAuth.",
+    "developerName": "KaProblem e.U.",
+    "category": "Finance",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.sharewise.com/",
+    "privacyPolicyURL": "https://www.sharewise.com/de/help/privacy",
+    "termsOfServiceURL": "https://www.sharewise.com/de/help/terms_and_conditions",
+    "defaultPrompt": [
+      "Was steht auf meinen sharewise-Watchlists?",
+      "Wie schätzt die sharewise-Community Nvidia ein?",
+      "Zeige mir die Positionen in meinem sharewise-Musterdepot."
+    ],
+    "brandColor": "#0070BF",
+    "composerIcon": "./assets/sharewise-icon.png",
+    "logo": "./assets/sharewise-logo.png",
+    "screenshots": []
+  }
+}

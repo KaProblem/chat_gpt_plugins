@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sharewise": {
+      "type": "http",
+      "url": "https://www.sharewise.com/web_mcp"
+    }
+  }
+}
