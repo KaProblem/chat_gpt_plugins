@@ -1,4 +1,4 @@
-# JGPD Plugins
+# KaProblem Plugins
 
 Codex-Plugins von KaProblem e.U.
 
@@ -17,7 +17,7 @@ Danach können die enthaltenen Plugins einzeln installiert werden.
 Verbindet Codex über OAuth mit [sharewise](https://www.sharewise.com/). Damit lassen sich Wertpapiere suchen, Community-Einschätzungen abrufen sowie Watchlists, Prognosen und Musterdepots verwalten.
 
 ```bash
-codex plugin add sharewise@jgpd
+codex plugin add sharewise@kaproblem
 ```
 
 Beim ersten Zugriff meldet sich jeder Nutzer mit seinem eigenen sharewise-Konto an und bestätigt die angeforderten Berechtigungen. Das Plugin enthält keine Zugangsdaten oder Tokens.
@@ -25,8 +25,8 @@ Beim ersten Zugriff meldet sich jeder Nutzer mit seinem eigenen sharewise-Konto 
 ## Aktualisieren
 
 ```bash
-codex plugin marketplace upgrade jgpd
-codex plugin add sharewise@jgpd
+codex plugin marketplace upgrade kaproblem
+codex plugin add sharewise@kaproblem
 ```
 
 Nach einer Installation oder Aktualisierung sollte ein neuer Codex-Task gestartet werden, damit die aktuelle Plugin-Version geladen wird.

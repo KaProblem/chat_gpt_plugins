@@ -1,7 +1,7 @@
 {
-  "name": "jgpd",
+  "name": "kaproblem",
   "interface": {
-    "displayName": "JGPD Plugins"
+    "displayName": "KaProblem Plugins"
   },
   "plugins": [
     {
