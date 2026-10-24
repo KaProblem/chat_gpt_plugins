@@ -1,6 +1,6 @@
 {
   "name": "sharewise",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Wertpapiere finden und das eigene sharewise-Konto direkt aus Codex verwalten.",
   "author": {
     "name": "KaProblem e.U.",
@@ -20,7 +20,7 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "sharewise",
-    "shortDescription": "Kurse, Watchlists, Einschätzungen und Musterdepots",
+    "shortDescription": "Kurse, Watchlists & Depots",
     "longDescription": "Verbinde dein sharewise-Konto mit Codex. Suche Wertpapiere samt Kurs und Community-Stimmung, verwalte Watchlists, veröffentliche Einschätzungen und bediene deine Musterdepots. Änderungen erfolgen erst nach der Anmeldung über sharewise OAuth.",
     "developerName": "KaProblem e.U.",
     "category": "Finance",
@@ -30,6 +30,7 @@
       "Write"
     ],
     "websiteURL": "https://www.sharewise.com/",
+    "supportURL": "https://www.sharewise.com/de/help/ai_assistant",
     "privacyPolicyURL": "https://www.sharewise.com/de/help/privacy",
     "termsOfServiceURL": "https://www.sharewise.com/de/help/terms_and_conditions",
     "defaultPrompt": [
@@ -39,7 +40,77 @@
     ],
     "brandColor": "#0070BF",
     "composerIcon": "./assets/sharewise-icon.png",
-    "logo": "./assets/sharewise-logo.png",
+    "logo": "./assets/sharewise-icon.png",
     "screenshots": []
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the user's watchlists and the securities on one of them",
+              "prompt": "Was steht auf meinen sharewise-Watchlists?",
+              "tools_triggered": "watchlists_list, watchlist_entries_list",
+              "expected_behavior": "Names the test account's watchlists and, for one of them, the securities with current price and community rating."
+            },
+            {
+              "description": "Community sentiment for a well-known stock",
+              "prompt": "Wie schätzt die sharewise-Community Nvidia ein?",
+              "tools_triggered": "instrument_community_sentiment",
+              "expected_behavior": "Reports how many sharewise users rate Nvidia buy or sell and the average price target, without presenting it as personal investment advice."
+            },
+            {
+              "description": "Search a security with its price",
+              "prompt": "Such mir SAP auf sharewise und sag mir den aktuellen Kurs.",
+              "tools_triggered": "instrument_search_with_price",
+              "expected_behavior": "Finds SAP and returns its current price and daily change."
+            },
+            {
+              "description": "Create a watchlist and add a security",
+              "prompt": "Leg auf sharewise eine private Watchlist \"Halbleiter\" an und setz Infineon darauf.",
+              "tools_triggered": "watchlist_create, watchlist_add",
+              "expected_behavior": "Creates a private watchlist named Halbleiter and adds Infineon to it, then confirms both steps."
+            },
+            {
+              "description": "List the user's own forecasts",
+              "prompt": "Welche meiner sharewise-Prognosen laufen gerade noch?",
+              "tools_triggered": "my_ratings_list",
+              "expected_behavior": "Lists the test account's active forecasts with security, recommendation and price target."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Real-money trade request",
+              "prompt": "Kauf mir echte Apple-Aktien für 1.000 Euro über mein Depot bei der Bank."
+            },
+            {
+              "description": "Account deletion is not supported",
+              "prompt": "Lösch mein sharewise-Konto."
+            },
+            {
+              "description": "Request for guaranteed investment advice",
+              "prompt": "Welche Aktie muss ich kaufen, damit ich sicher reich werde?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments. sharewise model portfolios and the Catch the Monkey game use no real money."
+      },
+      "publication": {
+        "countries": [
+          "DE",
+          "AT",
+          "CH"
+        ],
+        "release_notes": "First release in the OpenAI plugin directory: search securities with price and community sentiment, manage watchlists, publish forecasts and use sharewise model portfolios (no real money).",
+        "translations": {
+          "en-US": {
+            "subtitle": "Prices, watchlists, portfolios",
+            "description": "Connect your sharewise account. Search stocks and ETFs with price and community sentiment, manage watchlists, publish your own forecasts and manage your sharewise model portfolios. Model portfolios use no real money. Changes happen only after you sign in with sharewise OAuth."
+          }
+        }
+      }
+    }
   }
 }
