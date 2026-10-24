@@ -61,10 +61,10 @@
               "expected_behavior": "Reports how many sharewise users rate Nvidia buy or sell and the average price target, without presenting it as personal investment advice."
             },
             {
-              "description": "Search a security with its price",
-              "prompt": "Such mir SAP auf sharewise und sag mir den aktuellen Kurs.",
-              "tools_triggered": "instrument_search_with_price",
-              "expected_behavior": "Finds SAP and returns its current price and daily change."
+              "description": "Show the positions of the user's model portfolio",
+              "prompt": "Zeige mir die Positionen in meinem sharewise-Musterdepot.",
+              "tools_triggered": "portfolios_list, portfolio_positions_list",
+              "expected_behavior": "Finds the test account's model portfolio and lists its positions with value and gain or loss, noting that no real money is involved."
             },
             {
               "description": "Create a watchlist and add a security",
